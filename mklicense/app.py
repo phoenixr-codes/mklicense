@@ -101,7 +101,7 @@ class MkLicense(App):
                         yield text_area
 
     def action_select_license(self) -> None:
-        # TODOOO: don't trigger when form screen is opened
+        # TODOOO(#3): don't trigger when form screen is opened
         selected_tab = self.query_one(TabbedContent).active
         selected_license = [license for license in LICENSES if f"tab-{hash(license.spdx)}" == selected_tab][0]
         screen_id = f"form-{selected_license.spdx}"
