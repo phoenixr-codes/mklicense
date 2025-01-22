@@ -1,0 +1,29 @@
+[project]
+name = "mklicense"
+version = "0.1.0"
+description = "Quickly generate a license file"
+authors = [{ name = "Jonas da Silva", email = "phoenixr41414141@gmail.com" }]
+readme = "README.md"
+requires-python = "<4,>=3.13"
+dependencies = [
+  "textual==1.0.0",
+  "attrs==24.3.0",
+  "platformdirs (>=4.3.6,<5.0.0)",
+]
+classifiers = ["Private :: Do Not Upload"]
+
+[project.optional-dependencies]
+dev = ["mypy>=1.14.1"]
+
+[project.scripts]
+mklicense = "mklicense:app.run"
+
+[tool.poetry]
+include = ["mklicense/licenses/*"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylsp-mypy]
+enabled = true
