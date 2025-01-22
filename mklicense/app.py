@@ -34,7 +34,7 @@ class Form(Screen):
             yield TextArea(content, read_only=True)
             with Vertical():
                 for field in parser.substitutions(content):
-                    # TODO: add suggester that suggest values used previously; implies history
+                    # TODO(#2): add suggester that suggest values used previously; implies history
                     try:
                         default = query(field)
                     except FactoryError as e:
