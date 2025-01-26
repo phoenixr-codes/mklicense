@@ -27,7 +27,7 @@ def query(key: str) -> str | None:
     This function returns `None` when the script has not been found.
     """
     script = find_script_path()
-    if not script.exists():
+    if not script.is_file():
         return None
     result = subprocess.run([script, key], capture_output=True)
     try:

@@ -2,7 +2,7 @@
 
 MkLicense is a command-line tool for generating an Open Source License.
 
-<!-- TODO: screenshots and clips -->
+![Preview](./preview/out1.gif)
 
 MkLicense makes use of the [Textual][] TUI framework and is inspired by [choosealicense][].
 
