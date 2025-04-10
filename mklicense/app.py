@@ -3,6 +3,7 @@
 # TODO(#1): directory tree so user can select path
 
 from textual import on
+from textual.css.query import NoMatches
 from textual.binding import Binding
 from textual.app import App, ComposeResult, ScreenError
 from textual.containers import Center, Container, Horizontal, Vertical
@@ -69,8 +70,7 @@ class Form(Screen):
             f.write(text)
         self.app.exit()
 
-
-class MkLicense(App):
+class Selection(Screen):
     BINDINGS = [("enter", "select_license()", "Select license")]
 
     def compose(self) -> ComposeResult:
@@ -102,15 +102,24 @@ class MkLicense(App):
 
     def action_select_license(self) -> None:
         # TODOOO(#3): don't trigger when form screen is opened
-        selected_tab = self.query_one(TabbedContent).active
+        try:
+            selected_tab = self.query_one(TabbedContent).active
+        except NoMatches as e:
+            ...
         selected_license = [license for license in LICENSES if f"tab-{hash(license.spdx)}" == selected_tab][0]
         screen_id = f"form-{selected_license.spdx}"
         try:
-            self.install_screen(Form(selected_license), name=screen_id)
+            self.app.install_screen(Form(selected_license), name=screen_id)
         except ScreenError:
             pass
-        self.push_screen(screen_id)
+        self.app.push_screen(screen_id)
 
+
+class MkLicense(App):
+    SCREENS = {"selection": Selection}
+
+    def on_mount(self) -> None:
+        self.push_screen("selection")
 
 def run():
     app = MkLicense()
