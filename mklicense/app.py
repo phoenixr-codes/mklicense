@@ -101,11 +101,7 @@ class Selection(Screen):
                         yield text_area
 
     def action_select_license(self) -> None:
-        # TODOOO(#3): don't trigger when form screen is opened
-        try:
-            selected_tab = self.query_one(TabbedContent).active
-        except NoMatches as e:
-            ...
+        selected_tab = self.query_one(TabbedContent).active
         selected_license = [license for license in LICENSES if f"tab-{hash(license.spdx)}" == selected_tab][0]
         screen_id = f"form-{selected_license.spdx}"
         try:
