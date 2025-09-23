@@ -15,6 +15,7 @@ class Condition(StrEnum):
     DISCLOSE_SOURCE = "Disclose source"
     LICENSE_AND_COPYRIGHT_NOTICE = "License and copyright notice"
     LICENSE_AND_COPYRIGHT_NOTICE_FOR_SOURCE = "License and copyright notice for source"
+    COPYRIGHT_NOTICE_FOR_AD_MATERIAL = "Copyright notice for advertising material"
     NETWORK_USE_IS_DISTRIBUTION = "Network use is distribution"
     SAME_LICENSE = "Same license"
     SAME_LICENSE_FOR_LIBRARY = "Same license (library)"
@@ -198,6 +199,100 @@ LICENSES = [
             Limitation.LIABILITY,
             Limitation.WARRANTY,
         }
+    ),
+    License(
+        long_name="The Zero-Clause BSD License",
+        short_name="Zero-Clause BSD",
+        spdx="0BSD",
+        content=_embed("BSD0"),
+        permissions={
+            Permission.COMMERCIAL_USE,
+            Permission.DISTRIBUTION,
+            Permission.MODIFICATION,
+            Permission.PRIVATE_USE,
+        },
+        conditions=set(),
+        limitations={
+            Limitation.LIABILITY,
+            Limitation.WARRANTY,
+        },
+    ),
+    License(
+        long_name="The 2-Clause BSD License",
+        short_name="2-Clause BSD",
+        spdx="BSD-2-Clause",
+        content=_embed("BSD2"),
+        permissions={
+            Permission.COMMERCIAL_USE,
+            Permission.DISTRIBUTION,
+            Permission.MODIFICATION,
+            Permission.PRIVATE_USE,
+        },
+        conditions={
+            Condition.LICENSE_AND_COPYRIGHT_NOTICE,
+        },
+        limitations={
+            Limitation.LIABILITY,
+            Limitation.WARRANTY,
+        },
+    ),
+    License(
+        long_name="The 1-Clause BSD License",
+        short_name="1-Clause BSD",
+        spdx="BSD-1-Clause",
+        content=_embed("BSD1"),
+        permissions={
+            Permission.COMMERCIAL_USE,
+            Permission.DISTRIBUTION,
+            Permission.MODIFICATION,
+            Permission.PRIVATE_USE,
+        },
+        conditions={
+            Condition.LICENSE_AND_COPYRIGHT_NOTICE,
+        },
+        limitations={
+            Limitation.LIABILITY,
+            Limitation.WARRANTY,
+        },
+    ),
+    License(
+        long_name="The 3-Clause BSD License",
+        short_name="3-Clause BSD",
+        spdx="BSD-3-Clause",
+        content=_embed("BSD3"),
+        permissions={
+            Permission.COMMERCIAL_USE,
+            Permission.DISTRIBUTION,
+            Permission.MODIFICATION,
+            Permission.PRIVATE_USE,
+        },
+        conditions={
+            Condition.LICENSE_AND_COPYRIGHT_NOTICE,
+        },
+        limitations={
+            Limitation.LIABILITY,
+            Limitation.WARRANTY,
+        },
+    ),
+    License(
+        long_name="The 4-Clause BSD License",
+        short_name="4-Clause BSD",
+        spdx="BSD-4-Clause",
+        content=_embed("BSD4"),
+        permissions={
+            Permission.COMMERCIAL_USE,
+            Permission.DISTRIBUTION,
+            Permission.MODIFICATION,
+            Permission.PRIVATE_USE,
+        },
+        conditions={
+            Condition.LICENSE_AND_COPYRIGHT_NOTICE,
+            Condition.COPYRIGHT_NOTICE_FOR_AD_MATERIAL,
+        },
+        limitations={
+            Limitation.LIABILITY,
+            Limitation.WARRANTY,
+        },
     ),
     License(
         long_name="The Unlicense",
