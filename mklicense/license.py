@@ -311,4 +311,21 @@ LICENSES = [
             Limitation.WARRANTY,
         },
     ),
+    License(
+        long_name="Do What The Fuck You Want To Public License",
+        short_name="WTFPL",
+        spdx="WTFPL",
+        content=_embed("WTFPL"),
+        permissions={
+            Permission.COMMERCIAL_USE,
+            Permission.DISTRIBUTION,
+            Permission.MODIFICATION,
+            Permission.PRIVATE_USE,
+        },
+        conditions=set(),
+        limitations={
+            Limitation.LIABILITY,
+            Limitation.WARRANTY,
+        }
+    ),
 ]
