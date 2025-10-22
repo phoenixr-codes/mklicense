@@ -25,6 +25,10 @@ classifiers = [
 [project.optional-dependencies]
 dev = ["mypy>=1.14.1"]
 
+[project.urls]
+"Repository" = "https://github.com/phoenixr-codes/mklicense"
+"Bug Tracker" = "https://github.com/phoenixr-codes/mklicense/issues"
+
 [project.scripts]
 mklicense = "mklicense:app.run"
 
