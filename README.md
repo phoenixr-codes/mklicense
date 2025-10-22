@@ -13,7 +13,7 @@ MkLicense makes use of the [Textual][] TUI framework and is inspired by [choosea
 ## Installation
 
 ```console
-pipx install git+https://github.com/phoenixr-codes/mklicense.git
+pipx install mklicense
 ```
 
 ## Design

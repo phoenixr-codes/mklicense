@@ -10,7 +10,17 @@ dependencies = [
   "attrs==24.3.0",
   "platformdirs (>=4.3.6,<5.0.0)",
 ]
-classifiers = ["Private :: Do Not Upload"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Utilities",
+  "Typing :: Typed"
+]
 
 [project.optional-dependencies]
 dev = ["mypy>=1.14.1"]
