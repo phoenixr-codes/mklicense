@@ -1,5 +1,8 @@
 # MkLicense
 
+> [!WARNING]
+> This project has been [migrated to Codeberg](https://codeberg.org/jonasds/mklicense).
+
 MkLicense is a command-line tool for generating an Open Source License.
 
 ![Preview](./preview/out1.gif)
